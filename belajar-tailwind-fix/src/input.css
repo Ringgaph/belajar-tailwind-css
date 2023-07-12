@@ -1,0 +1,39 @@
+:root {
+  --warna-ungu: 168 85 247;
+  --warna-pink: 236 72 153;
+  --warna-biru: 2 132 199;
+  --warna-orange: 249 115 22;
+
+  --warna-tema: var(--warna-orange);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  h1 {
+    @apply text-8xl text-wpu;
+    color: theme(colors.wpu);
+  }
+}
+
+@layer components {
+  .grid-card {
+    @apply bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden relative hover:scale-95 transition-all duration-500;
+  }
+  .grid-card-img {
+    @apply w-full h-full bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500;
+  }
+
+  .kotak {
+    @apply w-[100px] h-[100px] m-10 mx-auto;
+    background-color: theme(colors.wpu / 30%);
+  }
+}
+
+@layer utilities {
+  #toggle:checked ~ label div.toggle-circle {
+    @apply translate-x-3;
+  }
+}
